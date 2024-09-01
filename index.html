@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waarom</title>
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/midea.css">
+</head>
+
+<body>
+    <!-- main body  -->
+    <section id="waarom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="waarom-title">
+                        <h1>Waarom voor <span class="font-bold">Ons</span> kiezen?</h1>
+                        <span class="underLine"></span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row g-3" id="card-row">
+                <div class="col-lg-6">
+                    <div class="cards d-flex flex-wrap align-items-center">
+                        <!-- First Item -->
+                        <div class="cardImg">
+                            <img src="./img/item1.webp" class="img-fluid w-100" alt="">
+                        </div>
+                        <div class="cardtext  expand-trigger" id="item1text" data-target=".expandable-content-1">
+                            <img src="./img/plus.png" alt="Expand" class="plus-icon">
+                            <p><span class="font-bold">Native Duitsers</span> in dienst, die precies weten hoe je de
+                                Duitse markt
+                                moet benaderen.</p>
+                        </div>
+
+                        <div class="cardtext expand-trigger" id="item2text" data-target=".expandable-content-2">
+                            <img src="./img/plus2.png" alt="Expand" class="plus-icon2">
+                            <p>Voel je thuis bij ons familiebedrijf, waar partnertevredenheid en lange termijn relaties
+                                centraal
+                                staan.</p>
+                        </div>
+
+                        <div class="cardImg">
+                            <img src="./img/item2.jpeg" class="img-fluid w-100" alt="">
+                        </div>
+
+                        <!-- Expandable Content Sections -->
+                        <div class="expandable-content expandable-content-1">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                            <button class="close-btn" data-target=".expandable-content-1">
+                                <img src="./img/minus.png" alt="Collapse" class="close-icon">
+                            </button>
+                        </div>
+                        <div class="expandable-content expandable-content-2">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                            <button class="close-btn" data-target=".expandable-content-2">
+                                <img src="./img/minus.png" alt="Collapse" class="close-icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="cards d-flex flex-wrap align-items-center">
+                        <!-- First Item -->
+                        <div class="cardImg">
+                            <img src="./img/item3.jpg" class="img-fluid w-100" alt="">
+                        </div>
+                        <div class="cardtext  expand-trigger" id="item3text" data-target=".expandable-content-3">
+                            <img src="./img/plus2.png" alt="Expand" class="plus-icon">
+                            <p class="font-bold">Van het ontwerpen en bouwen van de website tot online marketing
+                                werkzaamheden en digitalisatie van jouw interne
+                                processen, wij regelen het.</p>
+                        </div>
+
+                        <div class="cardtext expand-trigger" id="item4text" data-target=".expandable-content-4">
+                            <img src="./img/plus.png" alt="Expand" class="plus-icon2">
+                            <p class="font-bold">Wij combineren Duitse topkwaliteit met Nederlandse creativiteit en
+                                flexibiliteit.</p>
+                        </div>
+
+                        <div class="cardImg">
+                            <img src="./img/item4.jpg" class="img-fluid w-100" alt="">
+                        </div>
+
+                        <!-- Expandable Content Sections -->
+                        <div class="expandable-content expandable-content-3">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                            <button class="close-btn" data-target=".expandable-content-3">
+                                <img src="./img/minus.png" alt="Collapse" class="close-icon">
+                            </button>
+                        </div>
+                        <div class="expandable-content expandable-content-4">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                            <button class="close-btn" data-target=".expandable-content-4">
+                                <img src="./img/minus.png" alt="Collapse" class="close-icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentExpandedElement = null;
+
+        document.querySelectorAll('.expand-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function (event) {
+                event.stopPropagation();
+
+                const targetSelector = this.getAttribute('data-target');
+                const expandElement = document.querySelector(targetSelector);
+
+                // Check if there's already an expanded element and it's not the current one
+                if (currentExpandedElement && currentExpandedElement !== expandElement) {
+                    currentExpandedElement.classList.remove('expanded');
+                    document.querySelector('.cards').classList.remove('hidden');
+                    currentExpandedElement = null;
+                }
+
+                // Toggle the current element
+                if (expandElement.classList.contains('expanded')) {
+                    expandElement.classList.remove('expanded');
+                    document.querySelector('.cards').classList.remove('hidden');
+                    currentExpandedElement = null;
+                } else {
+                    document.querySelector('.cards').classList.add('hidden');
+                    expandElement.classList.add('expanded');
+                    currentExpandedElement = expandElement;
+                }
+            });
+        });
+
+        // Event listener to collapse expanded content when clicking outside
+        document.addEventListener('click', function () {
+            if (currentExpandedElement) {
+                currentExpandedElement.classList.remove('expanded');
+                document.querySelector('.cards').classList.remove('hidden');
+                currentExpandedElement = null;
+            }
+        });
+
+        // Prevent collapsing when clicking inside the expanded content
+        document.querySelectorAll('.expandable-content').forEach(expandable => {
+            expandable.addEventListener('click', function (event) {
+                // Stop event from bubbling up to the document click listener
+                event.stopPropagation();
+            });
+        });
+
+        // Event listener for the minus button to collapse the expanded section
+        document.querySelectorAll('.close-btn').forEach(btn => {
+            btn.addEventListener('click', function (event) {
+                event.stopPropagation(); // Stop click event from bubbling up
+                if (currentExpandedElement) {
+                    currentExpandedElement.classList.remove('expanded');
+                    document.querySelector('.cards').classList.remove('hidden');
+                    currentExpandedElement = null;
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

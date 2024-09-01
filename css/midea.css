@@ -1,0 +1,82 @@
+@media (max-width: 1200px) {
+    .cards {
+        gap: 20px;
+        min-height: 406px;
+
+    }
+
+    .cardImg {
+        width: 47%;
+        min-height: 250px;
+        border-radius: 70px 0;
+    }
+
+    .cardImg img {
+        height: 250px;
+    }
+
+    .cardtext {
+        width: 47%;
+        min-height: 250px;
+        padding: 30px 20px;
+        border-radius: 70px 0;
+
+    }
+
+    .expandable-content {
+        border-radius: 66px 0;
+    }
+
+    .expandable-content.expanded {
+
+        padding: 30px 20px;
+    }
+
+    .waarom-title h1 {
+
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 425px) {
+    .waarom-title h1 {
+
+        font-size: 26px;
+    }
+
+    #card-row {
+        margin-top: 40px;
+    }
+
+    .cards {
+        gap: 10px;
+        min-height: 206px;
+
+    }
+
+    .cardImg {
+        width: 48%;
+        min-height: 200px;
+        border-radius: 40px 0;
+    }
+
+    .cardImg img {
+        height: 200px;
+    }
+
+    .cardtext {
+        width: 48%;
+        min-height: 200px;
+        border-radius: 40px 0;
+
+    }
+
+    .expandable-content {
+        border-radius: 34px 0;
+    }
+
+
+    .cardtext p {
+        font-size: 12px;
+    }
+}

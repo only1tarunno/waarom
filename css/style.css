@@ -1,0 +1,203 @@
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+#waarom {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.waarom-title h1 {
+    color: #0a464d;
+    font-size: 50px;
+}
+
+.font-bold {
+    font-weight: 600;
+}
+
+.underLine {
+    display: block;
+    width: 126px;
+    height: 2px;
+    background-color: #0a464d;
+}
+
+/* Container Row */
+#card-row {
+    margin-top: 60px;
+  
+}
+
+/* Cards Wrapper */
+.cards {
+    gap: 20px;
+    min-height: 560px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Card Image Style */
+.cardImg {
+    width: 48%;
+    min-height: 270px;
+    border-radius: 97px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Card Image - Adjust Image within the Card */
+.cardImg img {
+    height: 270px;
+    object-fit: cover;
+}
+
+/* Card Text Block */
+.cardtext {
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 270px;
+    border-radius: 97px 0;
+    padding: 40px 25px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.cardtext p {
+    margin: 0;
+}
+
+/* Card Text Colors */
+#item1text,
+#item4text {
+    color: #0a464d;
+    background-color: #f2f2f2;
+}
+
+#item2text {
+    color: #fff;
+    background-color: #6a928c;
+}
+
+#item3text {
+    color: #cad400;
+    background-color: #0a464d;
+
+}
+
+
+.cards button {
+    border: none;
+}
+
+/* Expandable Content Base Style */
+.expandable-content {
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 97px 0;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.5s ease, opacity 0.5s ease;
+}
+
+/* Expanded State for Expandable Content */
+.expandable-content.expanded {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    padding: 40px 25px;
+}
+
+/* Hidden Class to Hide Cards */
+.hidden {
+    display: none;
+}
+
+/* Expandable Content Colors (Adjust as needed) */
+.expandable-content-1 {
+    color: #0a464d;
+    background-color: #f2f2f2;
+    top: 0;
+    right: 0;
+
+}
+
+.expandable-content-2 {
+    color: #fff;
+    background-color: #6a928c;
+    bottom: 0;
+    left: 0;
+}
+
+.expandable-content-3 {
+    color: #cad400;
+    background-color: #0a464d;
+    top: 0;
+    right: 0;
+}
+
+.expandable-content-4 {
+    color: #0a464d;
+    background-color: #f2f2f2;
+    bottom: 0;
+    left: 0;
+}
+
+
+/* Positioning the Plus Icon */
+.plus-icon {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.plus-icon2 {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    cursor: pointer;
+}
+
+/* Close Button Styling */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(-10px);
+
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Close Icon Styling */
+.close-icon {
+    width: 20px;
+    object-fit: cover;
+}
+
+.expandable-content.expanded .close-btn {
+    transform: translateY(0);
+    opacity: 1;
+}
